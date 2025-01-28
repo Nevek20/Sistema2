@@ -48,19 +48,27 @@ namespace Sitema2
 
         private void button2_Click(object sender, EventArgs e)
         {
-            textBox1.Text = string.Empty;
-            maskedTextBox1.Text = string.Empty;
-            maskedTextBox2.Text = string.Empty;
-            textBox4.Text = string.Empty;
-            maskedTextBox3.Text = string.Empty;
-            maskedTextBox4.Text = string.Empty;
-            textBox1.Focus();
+            textBoxNome.Text = string.Empty;
+            maskedTextBoxCPF.Text = string.Empty;
+            maskedTextBoxCEP.Text = string.Empty;
+            textBoxMail.Text = string.Empty;
+            maskedTextBoxNumero.Text = string.Empty;
+            maskedTextBoxTel.Text = string.Empty;
+            textBoxNome.Focus();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            label8.Text = "Cadastrado com sucesso!!!";
-            label8.ForeColor = Color.Green;
+            string cpf = maskedTextBoxCPF.Text;
+            if (ValidarCpf(cpf))
+            {
+                labelAlert.Text = "CPF válido";
+                labelAlert.ForeColor = Color.Green;
+            }
+            else
+            {
+
+            }
         }
 
         private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
@@ -104,6 +112,11 @@ namespace Sitema2
             resto = soma % 11;
             int digito2 = resto < 2 ? 0 : 11 - resto;
             return digito2 == int.Parse(cpf[10].ToString());
+        }
+
+        private void cadCliente_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
