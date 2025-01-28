@@ -52,6 +52,12 @@
     <Compile Include="cadCliente.Designer.cs">
       <DependentUpon>cadCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="CadPro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadPro.Designer.cs">
+      <DependentUpon>CadPro.cs</DependentUpon>
+    </Compile>
     <Compile Include="conCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +80,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="cadCliente.resx">
       <DependentUpon>cadCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CadPro.resx">
+      <DependentUpon>CadPro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="conCliente.resx">
       <DependentUpon>conCliente.cs</DependentUpon>

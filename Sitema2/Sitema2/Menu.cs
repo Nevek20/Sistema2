@@ -38,5 +38,11 @@ namespace Sitema2
             conCliente form = new conCliente();
             form.ShowDialog();
         }
+
+        private void buttonCadPro_Click(object sender, EventArgs e)
+        {
+           CadPro form = new CadPro();
+           form.ShowDialog();
+        }
     }
 }
