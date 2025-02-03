@@ -30,10 +30,10 @@
         {
             this.labelTitulo = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBoxNome = new System.Windows.Forms.TextBox();
+            this.textBoxNomeCompleto = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBoxMail = new System.Windows.Forms.TextBox();
+            this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -42,7 +42,7 @@
             this.buttonFechar = new System.Windows.Forms.Button();
             this.maskedTextBoxCPF = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBoxCEP = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBoxTel = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBoxTelefone = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBoxNumero = new System.Windows.Forms.MaskedTextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.labelAlert = new System.Windows.Forms.Label();
@@ -69,13 +69,13 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Nome completo";
             // 
-            // textBoxNome
+            // textBoxNomeCompleto
             // 
-            this.textBoxNome.Location = new System.Drawing.Point(161, 125);
-            this.textBoxNome.Name = "textBoxNome";
-            this.textBoxNome.Size = new System.Drawing.Size(249, 20);
-            this.textBoxNome.TabIndex = 2;
-            this.textBoxNome.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBoxNomeCompleto.Location = new System.Drawing.Point(161, 125);
+            this.textBoxNomeCompleto.Name = "textBoxNomeCompleto";
+            this.textBoxNomeCompleto.Size = new System.Drawing.Size(249, 20);
+            this.textBoxNomeCompleto.TabIndex = 2;
+            this.textBoxNomeCompleto.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label3
             // 
@@ -98,12 +98,12 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "CEP";
             // 
-            // textBoxMail
+            // textBoxEmail
             // 
-            this.textBoxMail.Location = new System.Drawing.Point(161, 204);
-            this.textBoxMail.Name = "textBoxMail";
-            this.textBoxMail.Size = new System.Drawing.Size(249, 20);
-            this.textBoxMail.TabIndex = 6;
+            this.textBoxEmail.Location = new System.Drawing.Point(161, 204);
+            this.textBoxEmail.Name = "textBoxEmail";
+            this.textBoxEmail.Size = new System.Drawing.Size(249, 20);
+            this.textBoxEmail.TabIndex = 6;
             // 
             // label5
             // 
@@ -186,13 +186,14 @@
             this.maskedTextBoxCEP.Size = new System.Drawing.Size(249, 20);
             this.maskedTextBoxCEP.TabIndex = 17;
             // 
-            // maskedTextBoxTel
+            // maskedTextBoxTelefone
             // 
-            this.maskedTextBoxTel.Location = new System.Drawing.Point(161, 282);
-            this.maskedTextBoxTel.Mask = "(00)0 0000-0000";
-            this.maskedTextBoxTel.Name = "maskedTextBoxTel";
-            this.maskedTextBoxTel.Size = new System.Drawing.Size(249, 20);
-            this.maskedTextBoxTel.TabIndex = 19;
+            this.maskedTextBoxTelefone.Location = new System.Drawing.Point(161, 282);
+            this.maskedTextBoxTelefone.Mask = "(00)0 0000-0000";
+            this.maskedTextBoxTelefone.Name = "maskedTextBoxTelefone";
+            this.maskedTextBoxTelefone.Size = new System.Drawing.Size(249, 20);
+            this.maskedTextBoxTelefone.TabIndex = 19;
+            this.maskedTextBoxTelefone.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBoxTel_MaskInputRejected);
             // 
             // maskedTextBoxNumero
             // 
@@ -227,7 +228,7 @@
             this.Controls.Add(this.labelAlert);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.maskedTextBoxNumero);
-            this.Controls.Add(this.maskedTextBoxTel);
+            this.Controls.Add(this.maskedTextBoxTelefone);
             this.Controls.Add(this.maskedTextBoxCEP);
             this.Controls.Add(this.maskedTextBoxCPF);
             this.Controls.Add(this.buttonFechar);
@@ -236,10 +237,10 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBoxMail);
+            this.Controls.Add(this.textBoxEmail);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBoxNome);
+            this.Controls.Add(this.textBoxNomeCompleto);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.labelTitulo);
             this.Name = "cadCliente";
@@ -254,10 +255,10 @@
 
         private System.Windows.Forms.Label labelTitulo;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBoxNome;
+        private System.Windows.Forms.TextBox textBoxNomeCompleto;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBoxMail;
+        private System.Windows.Forms.TextBox textBoxEmail;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
@@ -266,7 +267,7 @@
         private System.Windows.Forms.Button buttonFechar;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxCPF;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxCEP;
-        private System.Windows.Forms.MaskedTextBox maskedTextBoxTel;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxTelefone;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxNumero;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label labelAlert;
