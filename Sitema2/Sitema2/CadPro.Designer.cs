@@ -31,19 +31,18 @@
             this.labelAlert = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.maskedTextBoxAno = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBoxTelCar = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBoxTelefone = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBoxPlaca = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBoxCPFcar = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBoxCpf = new System.Windows.Forms.MaskedTextBox();
             this.buttonFecharCar = new System.Windows.Forms.Button();
             this.buttonLimparCar = new System.Windows.Forms.Button();
             this.buttonCadastrarCar = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBoxChassi = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBoxPropi = new System.Windows.Forms.TextBox();
+            this.textBoxProprietario = new System.Windows.Forms.TextBox();
             this.labelProp = new System.Windows.Forms.Label();
             this.labelTituloCar = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -54,6 +53,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.maskedTextBoxValor = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBoxChassi = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // labelAlert
@@ -81,13 +81,13 @@
             this.maskedTextBoxAno.Size = new System.Drawing.Size(249, 20);
             this.maskedTextBoxAno.TabIndex = 38;
             // 
-            // maskedTextBoxTelCar
+            // maskedTextBoxTelefone
             // 
-            this.maskedTextBoxTelCar.Location = new System.Drawing.Point(142, 126);
-            this.maskedTextBoxTelCar.Mask = "(00)0 0000-0000";
-            this.maskedTextBoxTelCar.Name = "maskedTextBoxTelCar";
-            this.maskedTextBoxTelCar.Size = new System.Drawing.Size(249, 20);
-            this.maskedTextBoxTelCar.TabIndex = 37;
+            this.maskedTextBoxTelefone.Location = new System.Drawing.Point(142, 126);
+            this.maskedTextBoxTelefone.Mask = "(00)0 0000-0000";
+            this.maskedTextBoxTelefone.Name = "maskedTextBoxTelefone";
+            this.maskedTextBoxTelefone.Size = new System.Drawing.Size(249, 20);
+            this.maskedTextBoxTelefone.TabIndex = 37;
             // 
             // maskedTextBoxPlaca
             // 
@@ -97,14 +97,14 @@
             this.maskedTextBoxPlaca.Size = new System.Drawing.Size(249, 20);
             this.maskedTextBoxPlaca.TabIndex = 36;
             // 
-            // maskedTextBoxCPFcar
+            // maskedTextBoxCpf
             // 
-            this.maskedTextBoxCPFcar.Location = new System.Drawing.Point(142, 100);
-            this.maskedTextBoxCPFcar.Mask = "000,000,000-00";
-            this.maskedTextBoxCPFcar.Name = "maskedTextBoxCPFcar";
-            this.maskedTextBoxCPFcar.Size = new System.Drawing.Size(249, 20);
-            this.maskedTextBoxCPFcar.TabIndex = 35;
-            this.maskedTextBoxCPFcar.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBoxCPF_MaskInputRejected);
+            this.maskedTextBoxCpf.Location = new System.Drawing.Point(142, 100);
+            this.maskedTextBoxCpf.Mask = "000,000,000-00";
+            this.maskedTextBoxCpf.Name = "maskedTextBoxCpf";
+            this.maskedTextBoxCpf.Size = new System.Drawing.Size(249, 20);
+            this.maskedTextBoxCpf.TabIndex = 35;
+            this.maskedTextBoxCpf.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBoxCPF_MaskInputRejected);
             // 
             // buttonFecharCar
             // 
@@ -135,6 +135,7 @@
             this.buttonCadastrarCar.TabIndex = 32;
             this.buttonCadastrarCar.Text = "Cadastrar";
             this.buttonCadastrarCar.UseVisualStyleBackColor = true;
+            this.buttonCadastrarCar.Click += new System.EventHandler(this.buttonCadastrarCar_Click);
             // 
             // label6
             // 
@@ -166,13 +167,6 @@
             this.label4.TabIndex = 29;
             this.label4.Text = "Ano";
             // 
-            // textBoxChassi
-            // 
-            this.textBoxChassi.Location = new System.Drawing.Point(142, 234);
-            this.textBoxChassi.Name = "textBoxChassi";
-            this.textBoxChassi.Size = new System.Drawing.Size(249, 20);
-            this.textBoxChassi.TabIndex = 28;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -193,12 +187,12 @@
             this.label3.TabIndex = 26;
             this.label3.Text = "CPF";
             // 
-            // textBoxPropi
+            // textBoxProprietario
             // 
-            this.textBoxPropi.Location = new System.Drawing.Point(142, 74);
-            this.textBoxPropi.Name = "textBoxPropi";
-            this.textBoxPropi.Size = new System.Drawing.Size(249, 20);
-            this.textBoxPropi.TabIndex = 25;
+            this.textBoxProprietario.Location = new System.Drawing.Point(142, 74);
+            this.textBoxProprietario.Name = "textBoxProprietario";
+            this.textBoxProprietario.Size = new System.Drawing.Size(249, 20);
+            this.textBoxProprietario.TabIndex = 25;
             // 
             // labelProp
             // 
@@ -206,9 +200,9 @@
             this.labelProp.Font = new System.Drawing.Font("MingLiU-ExtB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelProp.Location = new System.Drawing.Point(12, 74);
             this.labelProp.Name = "labelProp";
-            this.labelProp.Size = new System.Drawing.Size(106, 16);
+            this.labelProp.Size = new System.Drawing.Size(115, 16);
             this.labelProp.TabIndex = 24;
-            this.labelProp.Text = "Propietário";
+            this.labelProp.Text = "Proprietário";
             // 
             // labelTituloCar
             // 
@@ -236,6 +230,7 @@
             this.textBoxCor.Name = "textBoxCor";
             this.textBoxCor.Size = new System.Drawing.Size(249, 20);
             this.textBoxCor.TabIndex = 42;
+            this.textBoxCor.TextChanged += new System.EventHandler(this.textBoxCor_TextChanged);
             // 
             // label2
             // 
@@ -290,11 +285,20 @@
             this.maskedTextBoxValor.Size = new System.Drawing.Size(249, 20);
             this.maskedTextBoxValor.TabIndex = 48;
             // 
+            // maskedTextBoxChassi
+            // 
+            this.maskedTextBoxChassi.Location = new System.Drawing.Point(142, 231);
+            this.maskedTextBoxChassi.Mask = "aaaaaaaaaaaaaaaaa";
+            this.maskedTextBoxChassi.Name = "maskedTextBoxChassi";
+            this.maskedTextBoxChassi.Size = new System.Drawing.Size(249, 20);
+            this.maskedTextBoxChassi.TabIndex = 49;
+            // 
             // CadPro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.maskedTextBoxChassi);
             this.Controls.Add(this.maskedTextBoxValor);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
@@ -306,19 +310,18 @@
             this.Controls.Add(this.labelAlert);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.maskedTextBoxAno);
-            this.Controls.Add(this.maskedTextBoxTelCar);
+            this.Controls.Add(this.maskedTextBoxTelefone);
             this.Controls.Add(this.maskedTextBoxPlaca);
-            this.Controls.Add(this.maskedTextBoxCPFcar);
+            this.Controls.Add(this.maskedTextBoxCpf);
             this.Controls.Add(this.buttonFecharCar);
             this.Controls.Add(this.buttonLimparCar);
             this.Controls.Add(this.buttonCadastrarCar);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBoxChassi);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBoxPropi);
+            this.Controls.Add(this.textBoxProprietario);
             this.Controls.Add(this.labelProp);
             this.Controls.Add(this.labelTituloCar);
             this.Name = "CadPro";
@@ -334,19 +337,18 @@
         private System.Windows.Forms.Label labelAlert;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxAno;
-        private System.Windows.Forms.MaskedTextBox maskedTextBoxTelCar;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxTelefone;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxPlaca;
-        private System.Windows.Forms.MaskedTextBox maskedTextBoxCPFcar;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxCpf;
         private System.Windows.Forms.Button buttonFecharCar;
         private System.Windows.Forms.Button buttonLimparCar;
         private System.Windows.Forms.Button buttonCadastrarCar;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBoxChassi;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBoxPropi;
+        private System.Windows.Forms.TextBox textBoxProprietario;
         private System.Windows.Forms.Label labelProp;
         private System.Windows.Forms.Label labelTituloCar;
         private System.Windows.Forms.Label label1;
@@ -357,5 +359,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxValor;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxChassi;
     }
 }

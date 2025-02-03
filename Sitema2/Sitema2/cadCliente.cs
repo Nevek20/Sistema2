@@ -8,6 +8,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Sitema2
 {
@@ -48,13 +49,13 @@ namespace Sitema2
 
         private void button2_Click(object sender, EventArgs e)
         {
-            textBoxNome.Text = string.Empty;
+            textBoxNomeCompleto.Text = string.Empty;
             maskedTextBoxCPF.Text = string.Empty;
             maskedTextBoxCEP.Text = string.Empty;
-            textBoxMail.Text = string.Empty;
+            textBoxEmail.Text = string.Empty;
             maskedTextBoxNumero.Text = string.Empty;
-            maskedTextBoxTel.Text = string.Empty;
-            textBoxNome.Focus();
+            maskedTextBoxTelefone.Text = string.Empty;
+            textBoxNomeCompleto.Focus();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -67,9 +68,45 @@ namespace Sitema2
             }
             else
             {
+                labelAlert.Text = "CPF inválido";
+                labelAlert.ForeColor = Color.Red;
+                maskedTextBoxCPF.Text = "";
+                maskedTextBoxCPF.Focus();
+                return;
+            }
+            //conexão com o banco
+            string conexaoString = "server=localhost; Port=3306; Database=bd_sistema; Uid=root; Pwd=;";
 
+            //registro no banco
+            string query = "INSERT INTO tb_Clientes (NomeCompleto, Cpf, Email, Cep, Numero, Telefone) VALUES (@NomeCompleto, @Cpf, @Email, @Cep, @Numero, @Telefone)";
+
+            //conexão com o bd
+            using (MySqlConnection conexao = new MySqlConnection(conexaoString))
+            {
+                try
+                {
+                    conexao.Open();
+
+                    using (MySqlCommand comando = new MySqlCommand(query, conexao))
+                    {
+                        comando.Parameters.AddWithValue("@NomeCompleto", textBoxNomeCompleto.Text);
+                        comando.Parameters.AddWithValue("@Cpf", maskedTextBoxCPF.Text);
+                        comando.Parameters.AddWithValue("@Email", textBoxEmail.Text);
+                        comando.Parameters.AddWithValue("@Cep", maskedTextBoxCEP.Text);
+                        comando.Parameters.AddWithValue("@Numero", maskedTextBoxNumero.Text);
+                        comando.Parameters.AddWithValue("@Telefone", maskedTextBoxTelefone.Text);
+
+                        comando.ExecuteNonQuery();
+                        MessageBox.Show("Dados inseridos com sucesso!!");
+                    }
+                }
+                catch (Exception ex) 
+                {
+                    MessageBox.Show("Erro: " + ex.Message);
+                }
             }
         }
+
 
         private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
@@ -115,6 +152,11 @@ namespace Sitema2
         }
 
         private void cadCliente_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void maskedTextBoxTel_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
 
         }
